@@ -12,4 +12,8 @@ Call the program with the path to your cloud-init config file:
 ssh-import-known-hosts-cloud-init my-cloud-init.yaml
 ```
 
-The fingerprints of the keys are added to your `~/.ssh/known_hosts` file. The hostname to use for the `known_hosts` entries is taken from the [`fqdn` or `hostname`](https://cloudinit.readthedocs.io/en/latest/topics/modules.html#set-hostname) properties specified in the config file.
+The fingerprints of the keys are added to your `~/.ssh/known_hosts` file. The hostname to use for the `known_hosts` entries is taken from the [`fqdn` or `hostname`](https://cloudinit.readthedocs.io/en/latest/topics/modules.html#set-hostname) properties specified in the config file, or can be explicitly given using the `--hostname` option:
+
+```
+ssh-import-known-hosts-cloud-init --hostname ec2-foo.eu-west-2.compute.amazonaws.com my-cloud-init.yaml
+```
